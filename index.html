@@ -41,15 +41,11 @@
         .date-tag { background: var(--jaune); color: var(--bleu); padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; display: inline-block; }
 
         .grid-galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 8%; }
-        .media-card { 
-            background: white; border-radius: 15px; padding: 20px; text-align: center; 
-            border: 2px dashed var(--bleu); transition: 0.3s; cursor: pointer;
-        }
-        .media-card:hover { background: #f0f7ff; transform: scale(1.02); }
+        .media-card { background: white; border-radius: 15px; padding: 20px; text-align: center; border: 2px dashed var(--bleu); transition: 0.3s; cursor: pointer; }
         .media-card i { font-size: 40px; color: var(--bleu); }
 
         .qr-section { text-align: center; padding: 40px 8%; background: #fff; }
-        .qr-image { width: 200px; border: 5px solid var(--bleu); border-radius: 15px; margin-top: 15px; }
+        .qr-image { width: 220px; border: 5px solid var(--bleu); border-radius: 15px; margin-top: 15px; }
 
         .hero {
             height: 80vh;
@@ -97,18 +93,9 @@
 
     <div id="page-valeurs" class="page-content">
         <section class="presentation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 8%;">
-            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
-                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">gavel</i>
-                <h3>Discipline</h3><p>La base de toute réussite durable au sein du collège.</p>
-            </div>
-            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
-                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">menu_book</i>
-                <h3>Travail</h3><p>L'effort acharné pour transformer les rêves en réalité.</p>
-            </div>
-            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
-                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">emoji_events</i>
-                <h3>Succès</h3><p>Le résultat de notre rigueur et de notre passion.</p>
-            </div>
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);"><i class="material-icons" style="font-size: 50px; color: var(--bleu);">gavel</i><h3>Discipline</h3><p>La base de toute réussite durable.</p></div>
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);"><i class="material-icons" style="font-size: 50px; color: var(--bleu);">menu_book</i><h3>Travail</h3><p>L'effort pour transformer les rêves en réalité.</p></div>
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);"><i class="material-icons" style="font-size: 50px; color: var(--bleu);">emoji_events</i><h3>Succès</h3><p>Le résultat de notre rigueur.</p></div>
         </section>
     </div>
 
@@ -124,28 +111,23 @@
                 </tbody>
             </table>
         </div>
-
-        <h3 style="text-align:center; color:var(--bleu); margin-top:40px;">Galerie & Partage</h3>
         <div class="grid-galerie">
-            <label class="media-card"><input type="file" accept="image/*" style="display:none;"><i class="material-icons">add_a_photo</i><p><b>Importer Photos</b></p></label>
-            <label class="media-card"><input type="file" accept="video/*" style="display:none;"><i class="material-icons">video_library</i><p><b>Importer Vidéos</b></p></label>
-            <div class="media-card" onclick="window.print()"><i class="material-icons">picture_as_pdf</i><p><b>Exporter Planning</b></p></div>
+            <label class="media-card"><input type="file" accept="image/*" style="display:none;"><i class="material-icons">add_a_photo</i><p>Importer Photos</p></label>
+            <div class="media-card" onclick="window.print()"><i class="material-icons">picture_as_pdf</i><p>Exporter Planning</p></div>
         </div>
     </div>
 
     <div id="page-contact" class="page-content">
         <div class="qr-section">
-            <h2 style="color:var(--bleu);">Partagez notre site</h2>
-            <p>Faites scanner ce code aux parents pour accéder au site instantanément.</p>
-            <img src="frame.jpg" alt="Code QR Collège CEFOMI" class="qr-image">
+            <h2 style="color:var(--bleu);">Scannez pour partager</h2>
+            <img src="frame.png" alt="Code QR CEFOMI" class="qr-image">
         </div>
-
         <div class="contact-box">
             <h2>Nous rendre visite</h2>
             <p>📍 Douala PK14, Route Principale, Cameroun</p>
-            <p>📞 +237 699 91 45 41 / 691 43 44 53</p>
+            <p>📞 +237 699 91 45 41</p>
         </div>
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15919.141708688325!2d9.795833!3d4.095833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610f9b6e8f49ad%3A0x6b8f8f8f8f8f8f8f!2sPK14%2C%20Douala!5e0!3m2!1sfr!2scm!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.670353457193!2d9.7915!3d4.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMDAlDcnMjQuMiJOIDnCsDQ3JzI5LjQiRQ!5e0!3m2!1sfr!2scm!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <div class="news-ticker ticker-bottom">
