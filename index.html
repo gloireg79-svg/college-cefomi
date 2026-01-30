@@ -39,6 +39,16 @@
         .page-content.active { display: block; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Planning Style */
+        .planning-container { padding: 40px 8%; max-width: 900px; margin: auto; }
+        .planning-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px var(--ombre); }
+        .planning-table th { background: var(--bleu); color: white; padding: 18px; text-align: left; }
+        .planning-table td { padding: 18px; border-bottom: 1px solid #eee; font-size: 1.05rem; }
+        .planning-table tr:last-child td { border-bottom: none; }
+        .planning-table tr:hover { background: #fffdf2; }
+        .date-tag { background: var(--jaune); color: var(--bleu); padding: 6px 12px; border-radius: 5px; font-weight: bold; font-size: 0.95rem; display: inline-block; min-width: 140px; text-align: center; }
+        .act-title { font-weight: 800; color: var(--bleu); display: block; margin-bottom: 4px; }
+
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0, 74, 153, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80');
@@ -51,21 +61,16 @@
             margin-top: 25px; transition: 0.3s; font-size: 1.2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        .btn-inscription:hover { transform: scale(1.1); background: white; }
 
         .presentation { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 8%; }
         .card { background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu); }
         .card i { font-size: 50px; color: var(--bleu); margin-bottom: 15px; }
-
-        .grid-galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 40px 8%; }
-        .media-item { background: #fff; height: 280px; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #ddd; }
 
         .contact-box { background: var(--bleu); color: white; padding: 80px 8%; text-align: center; }
         .whatsapp-float {
             position: fixed; bottom: 85px; right: 30px; background: #25d366; color: white;
             width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
             justify-content: center; font-size: 35px; text-decoration: none; z-index: 2000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         footer { background: #1a1a1a; color: #eee; text-align: center; padding: 40px; }
@@ -106,11 +111,36 @@
     </div>
 
     <div id="page-evenements" class="page-content">
-        <h2 style="text-align:center; color:var(--bleu); margin-top:40px;">Nos Moments Forts</h2>
-        <div class="grid-galerie">
-            <div class="media-item">📷 Photos des Lauréats</div>
-            <div class="media-item">🎥 Vidéo de la Rentrée</div>
-            <div class="media-item">📷 Activités Sportives</div>
+        <h2 style="text-align:center; color:var(--bleu); margin-top:40px; font-size: 2.2rem;">Semaine de la Jeunesse 2026</h2>
+        <p style="text-align:center; color: #666; margin-bottom: 20px;">Découvrez le programme des festivités au collège</p>
+        
+        <div class="planning-container">
+            <table class="planning-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activité</th>
+                        <th>Participants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="date-tag">Lundi 09 Février</span></td>
+                        <td><span class="act-title">🎭 Journée du Déguisement</span>Grande parade créative dans l'enceinte du campus.</td>
+                        <td>Élèves</td>
+                    </tr>
+                    <tr>
+                        <td><span class="date-tag">Mardi 10 Février</span></td>
+                        <td><span class="act-title">🍲 Journée Gastronomique</span>Dégustation de mets traditionnels et partage.</td>
+                        <td>Élèves, Enseignants & Parents</td>
+                    </tr>
+                    <tr>
+                        <td><span class="date-tag">Jeudi 12 Février</span></td>
+                        <td><span class="act-title">🎉 Soirée Culturelle / Kermesse</span>Spectacles, danses et jeux divers.</td>
+                        <td>Toute la communauté</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
