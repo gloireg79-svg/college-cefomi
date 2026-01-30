@@ -7,11 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
-            --bleu: #004a99;
-            --jaune: #ffcc00;
-            --rouge: #e74c3c;
-            --blanc: #ffffff;
-            --ombre: rgba(0, 0, 0, 0.15);
+            --bleu: #004a99; --jaune: #ffcc00; --rouge: #e74c3c; --blanc: #ffffff; --ombre: rgba(0, 0, 0, 0.15);
         }
 
         body { font-family: 'Poppins', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f7f6; }
@@ -40,25 +36,27 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Planning Style */
-        .planning-container { padding: 40px 8%; max-width: 900px; margin: auto; }
+        .planning-container { padding: 20px 8%; max-width: 900px; margin: auto; }
         .planning-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px var(--ombre); }
-        .planning-table th { background: var(--bleu); color: white; padding: 18px; text-align: left; }
-        .planning-table td { padding: 18px; border-bottom: 1px solid #eee; font-size: 1.05rem; }
-        .planning-table tr:hover { background: #fffdf2; }
-        .date-tag { background: var(--jaune); color: var(--bleu); padding: 6px 12px; border-radius: 5px; font-weight: bold; font-size: 0.95rem; display: inline-block; min-width: 140px; text-align: center; }
-        .act-title { font-weight: 800; color: var(--bleu); display: block; margin-bottom: 4px; }
+        .planning-table th { background: var(--bleu); color: white; padding: 15px; text-align: left; }
+        .planning-table td { padding: 15px; border-bottom: 1px solid #eee; }
+        .date-tag { background: var(--jaune); color: var(--bleu); padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; display: inline-block; }
+
+        /* Galerie d'importation */
+        .grid-galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 8%; }
+        .media-card { 
+            background: white; border-radius: 15px; padding: 20px; text-align: center; 
+            border: 2px dashed var(--bleu); transition: 0.3s; cursor: pointer;
+        }
+        .media-card:hover { background: #f0f7ff; transform: scale(1.02); }
+        .media-card i { font-size: 40px; color: var(--bleu); }
+        .file-input { display: none; }
 
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0, 74, 153, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
-        }
-        .btn-inscription {
-            background: var(--jaune); color: var(--bleu); padding: 15px 35px; 
-            text-decoration: none; font-weight: bold; border-radius: 50px; 
-            margin-top: 25px; transition: 0.3s; font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .contact-box { background: var(--bleu); color: white; padding: 80px 8%; text-align: center; }
@@ -93,41 +91,58 @@
         <section class="hero">
             <h1 style="font-size: 3.5rem;">Bâtir l'avenir à Douala PK14</h1>
             <p style="font-size: 1.5rem; color: var(--jaune);">L'Excellence est notre engagement</p>
-            <a href="https://wa.me/237699914541" class="btn-inscription">S'inscrire maintenant</a>
+        </section>
+    </div>
+
+    <div id="page-valeurs" class="page-content">
+        <section class="presentation" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 8%;">
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
+                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">gavel</i>
+                <h3>Discipline</h3><p>La base de toute réussite durable au sein du collège.</p>
+            </div>
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
+                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">menu_book</i>
+                <h3>Travail</h3><p>L'effort acharné pour transformer les rêves en réalité.</p>
+            </div>
+            <div style="background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 25px var(--ombre); border-top: 6px solid var(--bleu);">
+                <i class="material-icons" style="font-size: 50px; color: var(--bleu);">emoji_events</i>
+                <h3>Succès</h3><p>Le résultat de notre rigueur et de notre passion.</p>
+            </div>
         </section>
     </div>
 
     <div id="page-evenements" class="page-content">
-        <h2 style="text-align:center; color:var(--bleu); margin-top:40px; font-size: 2.2rem;">Semaine de la Jeunesse 2026</h2>
-        <p style="text-align:center; color: #666; margin-bottom: 20px;">Programme officiel des activités au Collège CEFOMI</p>
+        <h2 style="text-align:center; color:var(--bleu); margin-top:40px;">Semaine de la Jeunesse 2026</h2>
         
         <div class="planning-container">
             <table class="planning-table">
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Activité</th>
-                        <th>Participants</th>
-                    </tr>
+                    <tr><th>Date</th><th>Activité</th><th>Participants</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><span class="date-tag">Lundi 09 Février</span></td>
-                        <td><span class="act-title">🎭 Journée du Déguisement</span>Les élèves expriment leur créativité à travers des costumes originaux.</td>
-                        <td>Élèves</td>
-                    </tr>
-                    <tr>
-                        <td><span class="date-tag">Mardi 10 Février</span></td>
-                        <td><span class="act-title">🍲 Journée de la Gastronomie</span>Découverte des saveurs locales et partage communautaire.</td>
-                        <td>Élèves, Enseignants, Parents</td>
-                    </tr>
-                    <tr>
-                        <td><span class="date-tag">Jeudi 12 Février</span></td>
-                        <td><span class="act-title">🎉 Soirée Culturelle / Kermesse</span>Grand rendez-vous festif avec spectacles et animations.</td>
-                        <td>Toute la communauté</td>
-                    </tr>
+                    <tr><td><span class="date-tag">Lundi 09 Fév</span></td><td>🎭 Journée du Déguisement</td><td>Élèves</td></tr>
+                    <tr><td><span class="date-tag">Mardi 10 Fév</span></td><td>🍲 Journée Gastronomique</td><td>Élèves, Parents, Profs</td></tr>
+                    <tr><td><span class="date-tag">Jeudi 12 Fév</span></td><td>🎉 Soirée Culturelle / Kermesse</td><td>Communauté</td></tr>
                 </tbody>
             </table>
+        </div>
+
+        <h3 style="text-align:center; color:var(--bleu); margin-top:40px;">Galerie & Partage</h3>
+        <div class="grid-galerie">
+            <label class="media-card">
+                <input type="file" accept="image/*" class="file-input">
+                <i class="material-icons">add_a_photo</i>
+                <p><b>Importer Photos</b><br><small>Lauréats & Évènements</small></p>
+            </label>
+            <label class="media-card">
+                <input type="file" accept="video/*" class="file-input">
+                <i class="material-icons">video_library</i>
+                <p><b>Importer Vidéos</b><br><small>Souvenirs du collège</small></p>
+            </label>
+            <div class="media-card" onclick="window.print()">
+                <i class="material-icons">picture_as_pdf</i>
+                <p><b>Exporter Planning</b><br><small>Télécharger en PDF</small></p>
+            </div>
         </div>
     </div>
 
@@ -136,7 +151,6 @@
             <h2>Contactez le Collège</h2>
             <p>📍 Douala PK14, Cameroun (Route Principale)</p>
             <p>📞 +237 699 91 45 41 / 691 43 44 53</p>
-            <p>✉️ cefomicefomi@gmail.com</p>
         </div>
     </div>
 
