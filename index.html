@@ -12,7 +12,6 @@
 
         body { font-family: 'Poppins', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f7f6; }
 
-        /* Bandes défilantes */
         .news-ticker { background: var(--rouge); color: white; padding: 12px 0; font-weight: 600; overflow: hidden; white-space: nowrap; border-bottom: 3px solid var(--jaune); }
         .ticker-bottom { border-bottom: none; border-top: 3px solid var(--jaune); background: var(--bleu); }
         .ticker-text { display: inline-block; animation: scroll-marquee 25s linear infinite; }
@@ -35,14 +34,12 @@
         .page-content.active { display: block; }
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Planning Style */
         .planning-container { padding: 20px 8%; max-width: 900px; margin: auto; }
         .planning-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px var(--ombre); }
         .planning-table th { background: var(--bleu); color: white; padding: 15px; text-align: left; }
         .planning-table td { padding: 15px; border-bottom: 1px solid #eee; }
         .date-tag { background: var(--jaune); color: var(--bleu); padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; display: inline-block; }
 
-        /* Galerie d'importation */
         .grid-galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 8%; }
         .media-card { 
             background: white; border-radius: 15px; padding: 20px; text-align: center; 
@@ -50,7 +47,9 @@
         }
         .media-card:hover { background: #f0f7ff; transform: scale(1.02); }
         .media-card i { font-size: 40px; color: var(--bleu); }
-        .file-input { display: none; }
+
+        .qr-section { text-align: center; padding: 40px 8%; background: #fff; }
+        .qr-image { width: 200px; border: 5px solid var(--bleu); border-radius: 15px; margin-top: 15px; }
 
         .hero {
             height: 80vh;
@@ -128,19 +127,25 @@
 
         <h3 style="text-align:center; color:var(--bleu); margin-top:40px;">Galerie & Partage</h3>
         <div class="grid-galerie">
-            <label class="media-card"><input type="file" accept="image/*" class="file-input"><i class="material-icons">add_a_photo</i><p><b>Importer Photos</b></p></label>
-            <label class="media-card"><input type="file" accept="video/*" class="file-input"><i class="material-icons">video_library</i><p><b>Importer Vidéos</b></p></label>
+            <label class="media-card"><input type="file" accept="image/*" style="display:none;"><i class="material-icons">add_a_photo</i><p><b>Importer Photos</b></p></label>
+            <label class="media-card"><input type="file" accept="video/*" style="display:none;"><i class="material-icons">video_library</i><p><b>Importer Vidéos</b></p></label>
             <div class="media-card" onclick="window.print()"><i class="material-icons">picture_as_pdf</i><p><b>Exporter Planning</b></p></div>
         </div>
     </div>
 
     <div id="page-contact" class="page-content">
+        <div class="qr-section">
+            <h2 style="color:var(--bleu);">Partagez notre site</h2>
+            <p>Faites scanner ce code aux parents pour accéder au site instantanément.</p>
+            <img src="frame.jpg" alt="Code QR Collège CEFOMI" class="qr-image">
+        </div>
+
         <div class="contact-box">
             <h2>Nous rendre visite</h2>
             <p>📍 Douala PK14, Route Principale, Cameroun</p>
             <p>📞 +237 699 91 45 41 / 691 43 44 53</p>
         </div>
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.736636752044!2d9.7891!3d4.0912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDUnMjguMyJOIDnCsDQ3JzIyLjgiRQ!5e0!3m2!1sfr!2scm!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15919.141708688325!2d9.795833!3d4.095833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610f9b6e8f49ad%3A0x6b8f8f8f8f8f8f8f!2sPK14%2C%20Douala!5e0!3m2!1sfr!2scm!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <div class="news-ticker ticker-bottom">
