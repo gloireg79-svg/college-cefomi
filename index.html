@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLEGE CEFOMI | Douala PK14</title>
+    <style>
+        :root {
+            --bleu: #004a99;
+            --jaune: #ffcc00;
+            --rouge: #e74c3c;
+            --blanc: #ffffff;
+            --ombre: rgba(0, 0, 0, 0.1);
+        }
+
+        body { font-family: 'Poppins', 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f8f9fa; }
+
+        /* Bandes défilantes */
+        .news-ticker { background: var(--rouge); color: white; padding: 12px 0; font-weight: 600; overflow: hidden; white-space: nowrap; }
+        .ticker-text { display: inline-block; animation: scroll-marquee 25s linear infinite; }
+        @keyframes scroll-marquee { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+
+        /* Menu de Navigation */
+        header { 
+            background: var(--bleu); color: white; padding: 20px 8%; 
+            position: sticky; top: 0; z-index: 1000; 
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 1.8rem; font-weight: 800; }
+        .logo span { color: var(--jaune); }
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--jaune); border-bottom: 2px solid var(--jaune); }
+
+        /* Gestion de l'affichage des pages */
+        .page-content { display: none; min-height: 70vh; animation: fadeIn 0.5s; }
+        .page-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Styles Spécifiques (Conservés) */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0, 74, 153, 0.7), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
+        }
+        .presentation { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 8%; }
+        .card { background: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px var(--ombre); border-bottom: 5px solid var(--jaune); }
+        
+        .grid-galerie { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 8%; }
+        .media-item { background: #eee; height: 250px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px dashed #ccc; }
+
+        .contact-box { background: var(--bleu); color: white; padding: 60px 8%; text-align: center; }
+        .map-frame { width: 100%; height: 450px; border: none; }
+
+        .whatsapp-float {
+            position: fixed; bottom: 85px; right: 30px; background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 35px; text-decoration: none; z-index: 2000;
+        }
+
+        footer { background: #111; color: #aaa; text-align: center; padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="news-ticker">
+        <div class="ticker-text">🌟 BIENVENUE AU COLLÈGE CEFOMI À DOUALA PK14 - DISCIPLINE - TRAVAIL - SUCCÈS 🌟</div>
+    </div>
+
+    <header>
+        <div class="logo">COLLEGE <span>CEFOMI</span></div>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('accueil')" id="btn-accueil" class="active">Accueil</a></li>
+                <li><a onclick="showPage('valeurs')" id="btn-valeurs">Valeurs</a></li>
+                <li><a onclick="showPage('evenements')" id="btn-evenements">Évènements</a></li>
+                <li><a onclick="showPage('contact')" id="btn-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="page-accueil" class="page-content active">
+        <section class="hero">
+            <h1 style="font-size: 3.5rem;">Bâtir l'avenir à Douala PK14</h1>
+            <p style="font-size: 1.5rem; color: var(--jaune);">L'Excellence est notre engagement</p>
+        </section>
+    </div>
+
+    <div id="page-valeurs" class="page-content">
+        <section class="presentation">
+            <div class="card"><h3>Discipline</h3><p>La base de toute réussite durable au sein du collège.</p></div>
+            <div class="card"><h3>Travail</h3><p>L'effort acharné pour transformer les rêves en réalité.</p></div>
+            <div class="card"><h3>Succès</h3><p>Le résultat de notre rigueur et de notre passion.</p></div>
+        </section>
+    </div>
+
+    <div id="page-evenements" class="page-content">
+        <h2 style="text-align:center; color:var(--bleu); margin-top:40px;">Nos Moments Forts</h2>
+        <div class="grid-galerie">
+            <div class="media-item">📷 Photos des Lauréats</div>
+            <div class="media-item">🎥 Vidéo de la Rentrée</div>
+            <div class="media-item">📷 Activités Sportives</div>
+        </div>
+    </div>
+
+    <div id="page-contact" class="page-content">
+        <div class="contact-box">
+            <h2>Contactez le Collège</h2>
+            <p>📍 Douala PK14, Cameroun (Route Principale)</p>
+            <p>📞 +237 699 91 45 41 / 691 43 44 53</p>
+            <p>✉️ cefomicefomi@gmail.com</p>
+        </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.714486510168!2d9.7994!3d4.0905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDUnMjUuOCJOIDnCsDQ3JzU3LjgiRQ!5e0!3m2!1sfr!2scm!4v1625000000000" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="news-ticker">
+        <div class="ticker-text">⚡ INSCRIPTIONS OUVERTES POUR L'ANNÉE SCOLAIRE 2026 - REJOIGNEZ-NOUS À PK14 ! ⚡</div>
+    </div>
+
+    <a href="https://wa.me/237699914541" class="whatsapp-float">💬</a>
+
+    <footer><p>© 2026 Collège CEFOMI - Douala PK14. Tous droits réservés.</p></footer>
+
+    <script>
+        function showPage(pageId) {
+            // Cacher toutes les pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Retirer l'état actif des boutons
+            const links = document.querySelectorAll('nav ul li a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Afficher la page sélectionnée
+            document.getElementById('page-' + pageId).classList.add('active');
+
+            // Mettre le bouton cliqué en jaune
+            document.getElementById('btn-' + pageId).classList.add('active');
+
+            // Remonter en haut de page pour le nouveau contenu
+            window.scrollTo(0,0);
+        }
+    </script>
+
+</body>
+</html>
