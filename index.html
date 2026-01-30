@@ -59,7 +59,9 @@
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
         }
 
-        .contact-box { background: var(--bleu); color: white; padding: 80px 8%; text-align: center; }
+        .contact-box { background: var(--bleu); color: white; padding: 60px 8%; text-align: center; }
+        .map-frame { width: 100%; height: 400px; border: none; }
+
         .whatsapp-float {
             position: fixed; bottom: 85px; right: 30px; background: #25d366; color: white;
             width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center;
@@ -113,12 +115,9 @@
 
     <div id="page-evenements" class="page-content">
         <h2 style="text-align:center; color:var(--bleu); margin-top:40px;">Semaine de la Jeunesse 2026</h2>
-        
         <div class="planning-container">
             <table class="planning-table">
-                <thead>
-                    <tr><th>Date</th><th>Activité</th><th>Participants</th></tr>
-                </thead>
+                <thead><tr><th>Date</th><th>Activité</th><th>Participants</th></tr></thead>
                 <tbody>
                     <tr><td><span class="date-tag">Lundi 09 Fév</span></td><td>🎭 Journée du Déguisement</td><td>Élèves</td></tr>
                     <tr><td><span class="date-tag">Mardi 10 Fév</span></td><td>🍲 Journée Gastronomique</td><td>Élèves, Parents, Profs</td></tr>
@@ -129,29 +128,19 @@
 
         <h3 style="text-align:center; color:var(--bleu); margin-top:40px;">Galerie & Partage</h3>
         <div class="grid-galerie">
-            <label class="media-card">
-                <input type="file" accept="image/*" class="file-input">
-                <i class="material-icons">add_a_photo</i>
-                <p><b>Importer Photos</b><br><small>Lauréats & Évènements</small></p>
-            </label>
-            <label class="media-card">
-                <input type="file" accept="video/*" class="file-input">
-                <i class="material-icons">video_library</i>
-                <p><b>Importer Vidéos</b><br><small>Souvenirs du collège</small></p>
-            </label>
-            <div class="media-card" onclick="window.print()">
-                <i class="material-icons">picture_as_pdf</i>
-                <p><b>Exporter Planning</b><br><small>Télécharger en PDF</small></p>
-            </div>
+            <label class="media-card"><input type="file" accept="image/*" class="file-input"><i class="material-icons">add_a_photo</i><p><b>Importer Photos</b></p></label>
+            <label class="media-card"><input type="file" accept="video/*" class="file-input"><i class="material-icons">video_library</i><p><b>Importer Vidéos</b></p></label>
+            <div class="media-card" onclick="window.print()"><i class="material-icons">picture_as_pdf</i><p><b>Exporter Planning</b></p></div>
         </div>
     </div>
 
     <div id="page-contact" class="page-content">
         <div class="contact-box">
-            <h2>Contactez le Collège</h2>
-            <p>📍 Douala PK14, Cameroun (Route Principale)</p>
+            <h2>Nous rendre visite</h2>
+            <p>📍 Douala PK14, Route Principale, Cameroun</p>
             <p>📞 +237 699 91 45 41 / 691 43 44 53</p>
         </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.736636752044!2d9.7891!3d4.0912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMDUnMjguMyJOIDnCsDQ3JzIyLjgiRQ!5e0!3m2!1sfr!2scm!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <div class="news-ticker ticker-bottom">
@@ -163,7 +152,6 @@
     </div>
 
     <a href="https://wa.me/237699914541" class="whatsapp-float">💬</a>
-
     <footer><p>© 2026 Collège CEFOMI - Douala PK14. Tous droits réservés.</p></footer>
 
     <script>
